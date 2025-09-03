@@ -45,3 +45,16 @@ Completed 200 OK in 20ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cache
   [1m[36mBook Create (1.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "publication_date", "created_at", "updated_at") VALUES ('Atomics Habits', '2020-10-10', '2025-09-03 13:49:40.265612', '2025-09-03 13:49:40.265612') RETURNING "id" /*application='Library'*/[0m
   [1m[36mTRANSACTION (24.9ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
   [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT 11 /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630) /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Library'*/[0m
+Migrating to CreateAuthors (20250903135601)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "authors" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250903135601') RETURNING "version" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (22.9ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630) /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
