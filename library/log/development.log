@@ -58,3 +58,22 @@ Migrating to CreateAuthors (20250903135601)
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630) /*application='Library'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5288427128707212630) /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Library'*/[0m
+Migrating to AddAuthorsRut (20250903140601)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "authors" ADD "rut" character varying NOT NULL /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250903140601') RETURNING "version" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5288427128707212630) /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[36mAuthor Create (6.5ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at", "rut") VALUES ('Jordan', 'Peterson', '2025-09-03 14:15:31.293884', '2025-09-03 14:15:31.293884', '111111111-1') RETURNING "id" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
+  [1m[36mAuthor Load (0.8ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /* loading for pp */ LIMIT 11 /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
