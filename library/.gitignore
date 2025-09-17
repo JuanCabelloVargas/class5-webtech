@@ -1,15 +1,55 @@
-# Logs de Rails
+# Bundle config
+/.bundle
+
+# Logs y archivos temporales
 /log/*
 !/log/.keep
-
-# Archivos temporales
-/tmp/*
+/tmp
 !/tmp/.keep
 
-# Assets compilados por jsbundling-rails o cssbundling-rails
-/app/assets/builds/*
-!/app/assets/builds/.keep
+# Archivos de credenciales y llaves
+/config/master.key
+/config/credentials/*.key
+/config/credentials.yml.enc
 
-# Node modules
+# Archivos de base de datos (PostgreSQL dumps y backups)
+/db/*.dump
+/db/*.sql
+/db/*.backup
+
+# Archivos de almacenamiento
+/storage/*
+!/storage/.keep
+
+# Archivos de entorno
+.env
+.env.*
+
+# Node & Yarn
 /node_modules
+/yarn-error.log
+
+# Cache y compilados
+/tmp/cache/bootsnap*
+/public/assets
+/app/assets/builds
+/coverage
+
+# Archivos de pruebas
+/test/tmp
+!/test/tmp/.keep
+/test/version_tmp
+!/test/version_tmp/.keep
+/capybara-*.html
+/tmp/screenshots
+
+# Configuración de editores/IDEs
+/.idea
+/.vscode
+*.swp
+*.swo
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
 
