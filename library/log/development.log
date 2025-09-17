@@ -1037,3 +1037,18 @@ Processing by AuthorsController#index as HTML
 Completed 200 OK in 23ms (Views: 8.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[36mAuthor Exists? (9.7ms)[0m  [1m[34mSELECT 1 AS one FROM "authors" WHERE "authors"."rut" IS NULL LIMIT 1 /*application='Library'*/[0m
+  [1m[36mAuthor Create (1.5ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at", "rut") VALUES ('Charles', 'Dickens', '2025-09-17 12:56:47.071716', '2025-09-17 12:56:47.071716', NULL) RETURNING "id" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK /*application='Library'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[36mAuthor Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "authors" WHERE "authors"."rut" = '1234123410' LIMIT 1 /*application='Library'*/[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at", "rut") VALUES ('Charles', 'Dickens', '2025-09-17 12:56:58.445712', '2025-09-17 12:56:58.445712', '1234123410') RETURNING "id" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 5 LIMIT 1 /*application='Library'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='Library'*/[0m
+  [1m[36mAuthor Exists? (7.4ms)[0m  [1m[34mSELECT 1 AS one FROM "authors" WHERE "authors"."rut" = '523452342' LIMIT 1 /*application='Library'*/[0m
+  [1m[36mAuthor Create (0.4ms)[0m  [1m[32mINSERT INTO "authors" ("first_name", "last_name", "created_at", "updated_at", "rut") VALUES ('Garen', 'Crack', '2025-09-17 13:00:43.726114', '2025-09-17 13:00:43.726114', '523452342') RETURNING "id" /*application='Library'*/[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
