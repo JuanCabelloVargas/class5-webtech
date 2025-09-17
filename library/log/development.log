@@ -1006,3 +1006,34 @@ FOREIGN KEY ("author_id")
   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='Library'*/[0m
   [1m[36mBook Load (21.7ms)[0m  [1m[34mSELECT "books".* FROM "books" /* loading for pp */ LIMIT 11 /*application='Library'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-09-17 09:44:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Library'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/nuaj/.rbenv/versions/3.4.5/lib/ruby/gems/3.4.0/gems/railties-8.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/nuaj/.rbenv/versions/3.4.5/lib/ruby/gems/3.4.0/gems/railties-8.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 4.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/authors/1" for 127.0.0.1 at 2025-09-17 09:44:57 -0300
+Processing by AuthorsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors" WHERE "authors"."id" = 1 LIMIT 1 /*action='show',application='Library',controller='authors'*/[0m
+  ↳ app/controllers/authors_controller.rb:7:in 'AuthorsController#show'
+  Rendering layout layouts/application.html.erb
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | GC: 0.0ms)
+Completed 200 OK in 117ms (Views: 26.4ms | ActiveRecord: 28.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/authors/" for 127.0.0.1 at 2025-09-17 09:45:02 -0300
+Processing by AuthorsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" /*action='index',application='Library',controller='authors'*/[0m
+  ↳ app/views/authors/index.html.erb:4
+  Rendered authors/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 8.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
